@@ -84,9 +84,13 @@ const FileUpload = () => {
             <div className="file-upload-container">
                 <div className="image-upload-section">
                     <div className="announcement-text">
-                        <h1 className="">Announcements</h1>
+                        <h1>Announcements</h1>
                         <h3>Upload your announcement here, and it will be displayed on the LED Matrix!</h3>
-                        <p><strong><em>Ensure your image or video is square</em></strong></p>
+                        {error ? (
+                            <p className="error-message">Please input a square image.</p>
+                        ) : (
+                            <p><strong><em>Ensure your image or video is square</em></strong></p>
+                        )}
                     </div>
                     <div className="upload-box">
                         <input
@@ -109,11 +113,6 @@ const FileUpload = () => {
                             </div>
                         )}
                     </div>
-                    {error && (
-                        <p className="error-message">
-                            Please input a square image.
-                        </p>
-                    )}
                     <div className="button-container">
                         <button
                             className="submit-button"

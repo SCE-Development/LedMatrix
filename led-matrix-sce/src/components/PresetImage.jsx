@@ -1,9 +1,14 @@
 import React from 'react';
 import '../styles/PresetImage.css';
 
-const PresetImage = () => {
+const PresetImage = ({ presets }) => {
     // Array of 9 preset images (you can modify this later with actual presets)
-    const presets = Array(9).fill(null);
+    // const presets = Array(9).fill(null);
+
+    function addImage(newImage) {
+        presets.unshift(newImage);
+        presets.pop();
+    }
 
     return (
         <div className="preset-image-container">
