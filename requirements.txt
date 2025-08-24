@@ -1,4 +1,4 @@
-requests
-pyyaml
 fastapi
 uvicorn
+pyyaml
+requests
