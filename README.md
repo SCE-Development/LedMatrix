@@ -6,7 +6,10 @@ This repository contains code and resources for controlling and managing the SCE
 
 ## Main Files
 
+- **start_led.sh**: The script to start the entire session. This uses the `tmux` command to run both the LED Matrix and the FastAPI code.
 - **server.py**: The main Python script for running the LED Matrix server. Handles requests, controls the database, and manages communication.
+- **docker-compose.yml**: The script to Dockerize the FastAPI backend. Run this file using `docker-compose up --build`.
+- **Dockerfile**: Contains configuration information for the Docker container.
 - **server_config.yml**: YAML configuration file for the server. Allows customization of which database file to use, API keys, and what port to run the server on. 
 - **requirements.txt**: Lists the Python dependencies required to run the project. Install with `pip install -r requirements.txt`.
 - **text-example**: C++ binary that connects Python backend to the Raspberry Pi, allowing the Pi to control the LED panels to display text.
@@ -22,15 +25,8 @@ Contains helper modules and utilities used by the main server script:
 
 ---
 
-## Getting Started
-1. **Create a Python virtual environment to run the backend:**  `python3 -m venv .venv`
-2. **Activate the virtual environment:**  
-**On MacOS/Linux:** `source .venv/bin/activate`  
-**On Windows:** `.venv\Scripts\activate`   
-3. Install dependencies: `pip install -r requirements.txt`
-4. Configure the server to your liking using `server_config.yml`.
-5. Run the server: `python server.py`
-6. Finally, start the LED Matrix: `./start.sh`  
+## How To Run The Project
+1. Run `./start_led.sh`. There. That's it! 
 
 ## Contact
 For questions or support, contact the repository owners:
