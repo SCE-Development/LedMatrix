@@ -51,9 +51,9 @@ def leaderboard():
         )
         for user in users:
             user["points"] = (
-                user["easy"] * POINTS["easy"]
-                + user["medium"] * POINTS["medium"]
-                + user["hard"] * POINTS["hard"]
+                user["easy"] * POINTS.get("easy", 0)
+                + user["medium"] * POINTS.get("medium", 0)
+                + user["hard"] * POINTS.get("hard", 0)
             )
         users_sorted = sorted(users, key=lambda u: u["points"], reverse=True)
         return users_sorted
