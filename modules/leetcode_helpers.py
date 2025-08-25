@@ -1,5 +1,7 @@
 import dataclasses
+
 import requests
+
 from modules.logger import logger
 
 
